@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+   <script src="https://kit.fontawesome.com/862dbf3aa2.js" crossorigin="anonymous"></script>
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <script src="script.js"></script>
+   <link rel="stylesheet" type="text/css" href="style.css" />
+   <link rel="icon" type="image/png" href="favicon.ico" />
+   <title>Kalkulator</title>
+</head>
+
+<body>
+   <center>
+      <div class="pojemnik">
+         <!-- wiersz  -->
+         <input type="text" id="inputBox" value="0" readonly="true" disabled>
+         <div id="More">
+
+            <button class="lessButton" onclick="showSelect('Masa')"><i class="fas fa-weight"></i></button>
+
+            <button class="lessButton" onclick="showSelect('Distance')"><i class="fas fa-ruler"></i></button>
+
+            <button class="lessButton" onclick="showSelect('Waluta')"><i class="far fa-money-bill-alt"></i></button>
+
+            <button class="lessButton" onclick="showSelect('Temperatura')"><i
+                  class="fas fa-temperature-high"></i></button>
+            <div id="Masa" class="divMore">
+               <div>
+                  <div>
+                     <label>Kilogram</label>
+                     <input id="Kilogram" type="number" placeholder="Kilogram" oninput="Masa(this.id,this.value)"
+                        onchange="Masa(this.id,this.value)">
+                  </div>
+                  <label>Funt</label>
+                  <input id="Funt" type="number" placeholder="Funt" oninput="Masa(this.id,this.value)"
+                     onchange="Masa(this.id,this.value)">
+               </div>
+               <div>
+                  <label>Uncja</label>
+                  <input id="Uncja" type="number" placeholder="Uncja" oninput="Masa(this.id,this.value)"
+                     onchange="Masa(this.id,this.value)">
+               </div>
+               <div>
+                  <label>Gramy</label>
+                  <input id="Gramy" type="number" placeholder="Gramy" oninput="Masa(this.id,this.value)"
+                     onchange="Masa(this.id,this.value)">
+               </div>
+               <div>
+                  <label>Kamień</label>
+                  <input id="kamien" type="number" placeholder="Kamień" oninput="Masa(this.id,this.value)"
+                     onchange="Masa(this.id,this.value)">
+               </div>
+            </div>
+            <div id="Distance" class="divMore">
+
+               <label>Centymetr</label>
+               <input id="Centymetr" type="number" placeholder="Centymetr" oninput="Distance(this.id,this.value)"
+                  onchange="Distance(this.id,this.value)">
+
+               <label>Metr</label>
+               <input id="Metr" type="number" placeholder="Metr" oninput="Distance(this.id,this.value)"
+                  onchange="Distance(this.id,this.value)">
+
+               <label>Stopa</label>
+               <input id="Stopa" type="number" placeholder="Stopa" oninput="Distance(this.id,this.value)"
+                  onchange="Distance(this.id,this.value)">
+
+               <label>Cal</label>
+               <input id="Cal" type="number" placeholder="Cal" oninput="Distance(this.id,this.value)"
+                  onchange="Distance(this.id,this.value)">
+
+               <label>Jard</label>
+               <input id="Jard" type="number" placeholder="Jard" oninput="Distance(this.id,this.value)"
+                  onchange="Distance(this.id,this.value)">
+
+            </div>
+            <div id="Waluta" class="divMore">
+
+               <label>Złoty</label>
+               <input id="Zloty" type="number" placeholder="PLN" oninput="Waluta(this.id,this.value)"
+                  onchange="Waluta(this.id,this.value)">
+
+               <label>Dolar</label>
+               <input id="Dolar" type="number" placeholder="USD" oninput="Waluta(this.id,this.value)"
+                  onchange="Waluta(this.id,this.value)">
+
+               <label>Funt</label>
+               <input id="GBY" type="number" placeholder="GBY" oninput="Waluta(this.id,this.value)"
+                  onchange="Waluta(this.id,this.value)">
+
+               <label>Euro</label>
+               <input id="Euro" type="number" placeholder="EUR" oninput="Waluta(this.id,this.value)"
+                  onchange="Waluta(this.id,this.value)">
+
+               <label>Jen</label>
+               <input id="Jen" type="number" placeholder="JPY" oninput="Waluta(this.id,this.value)"
+                  onchange="Waluta(this.id,this.value)">
+
+            </div>
+            <div id="Temperatura" class="divMore">
+               <label>Celsjusz</label>
+               <input id="Celsjusz" type="number" placeholder="Celsjusz" oninput="Temperatura(this.id,this.value)"
+                  onchange="Temperatura(this.id,this.value)">
+               <label>Kalwin</label>
+               <input id="Kalwin" type="number" placeholder="Kalwin" oninput="Temperatura(this.id,this.value)"
+                  onchange="Temperatura(this.id,this.value)">
+               <label>Fahrenheit</label>
+               <input id="Farenhait" type="number" placeholder="Farenhait" oninput="Temperatura(this.id,this.value)"
+                  onchange="Temperatura(this.id,this.value)">
+            </div>
+            <button onclick="Less()" rowspan="0" id="less"><i class="fas fa-ellipsis-h"></i></button>
+         </div>
+         <!-- wiersz  -->
+         <button onclick="clearInput()"><i class="fas fa-trash-restore"></i></button>
+         <button onclick="wyczyscWszystko()"><i class="far fa-trash-alt"></i></button>
+         <button onclick="usunJedenZnak()"><i class="fas fa-backspace"></i></button>
+         <button onclick="Counting('/')"><i class="fas fa-divide"></i></button>
+         <button onclick="Pierwiastek()"><i class="fas fa-square-root-alt"></i></button>
+
+         <!-- wiersz  -->
+         <button class="numeric" onclick="numberToInput(7)">7</button>
+         <button class="numeric" onclick="numberToInput(8)">8</button>
+         <button class="numeric" onclick="numberToInput(9)">9</button>
+         <button onclick="Counting('*')"><i class="fas fa-times"></i></button>
+         <button onclick="Counting('xx')"><i class="fas fa-superscript"></i></button>
+         <!-- wiersz  -->
+         <button class="numeric" onclick="numberToInput(4)">4</button>
+         <button class="numeric" onclick="numberToInput(5)">5</button>
+         <button class="numeric" onclick="numberToInput(6)">6</button>
+         <button onclick="Counting('-')"><i class="fas fa-minus"></i></button>
+         <button onclick="Odwrotnosc()">1/x</button>
+         <!-- wiersz  -->
+         <button class="numeric" onclick="numberToInput(1)">1</button>
+         <button class="numeric" onclick="numberToInput(2)">2</button>
+         <button class="numeric" onclick="numberToInput(3)">3</button>
+         <button onclick="Counting('+')"><i class="fas fa-plus"></i></button>
+         <!-- wiersz  --><button onclick="Counting('%')"><i class="fas fa-percent"></i></button>
+         <button onclick="ZmianaZnaku()">&plusmn</button>
+         <button class="numeric" onclick="numberToInput(0)">0</button>
+         <button onclick="Przecinek()" id="przecinek"><i class="fas fa-circle"></i></button>
+         <button onclick="RownaSie()" rowspan="0" class="RownaSie"><i class="fas fa-equals"></i></button>
+         <button onclick="More()" rowspan="0" id="show"><i class="fas fa-ellipsis-h"></i></button>
+
+
+      </div>
+   </center>
+</body>
+
+</html>

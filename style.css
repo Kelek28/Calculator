@@ -1,0 +1,80 @@
+
+.pojemnik{
+	width: 500pt;
+	height: 500pt;
+	
+}
+button {
+	float: left;
+	margin: none;
+    width: 20%;
+    height: 20%;
+    background-color: rgb(224, 222, 222);
+    transition: background-color 0.3s;
+    border: none;
+    font-size: 2.5em;
+}
+button:hover {
+    background-color: rgb(96, 96, 224);
+    color: white;
+}
+button.numeric {
+    font-weight: bold;
+}
+input { 
+    z-index: 1000;
+    width: 100%;
+    height: 100pt;
+    font-size: 3em;
+    text-align: right;
+    box-sizing: inherit;
+    border: none;
+    color: black;
+    background: white;
+}
+.RownaSie{
+    width: 20%;
+}
+#More{
+	position: relative;
+	width: 500pt;
+	height: 500pt;
+display: none;
+background-color: rgb(224, 222, 222);
+
+}
+#przecinek{
+    font-size: 10px;
+}
+#less{
+    bottom: 0px;
+    width: 100%;
+    height: 20%;
+    z-index:1000;
+    display: none;
+    position: relative;
+}
+.lessButton{
+    font-size:50px;
+    width: 25%;
+    z-index:1000;
+    float: left;
+    position: sticky;
+    display: none;
+}
+.divMore{
+    display: none;
+    font-size: 1.5em;
+}
+.divMore input{
+    text-align: center;
+    height: 50px;
+    font-size: 1em;
+}
+#more label{
+    font-family: Anton;
+}
+#More input{
+    font-family: Anton;
+    background-color: rgb(224, 222, 222);
+}
